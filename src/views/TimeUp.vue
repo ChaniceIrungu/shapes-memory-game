@@ -20,7 +20,7 @@
       <div class="pt-7 pl-4 h-24 w-24">
         <img
           src="../assets/replay.png"
-          @click="goToOtherPage('home')"
+          @click="goToOtherPage('/')"
           class="h-full"
         />
       </div>
@@ -39,7 +39,7 @@ export default {
   // method to navigate other pages
   methods: {
     goToOtherPage(page) {
-      this.$router.push(`/${page}`);
+      this.$router.push(`${page}`);
     },
   },
 };
