@@ -1,0 +1,27 @@
+@import "./base.css";
+
+#app {
+  width: 360px;
+  height: 640px;
+  margin: 0 auto;
+  padding: 2px;
+  font-weight: normal;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    padding: 0 2rem;
+  }
+}
