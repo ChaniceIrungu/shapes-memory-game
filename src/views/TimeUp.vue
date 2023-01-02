@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col items-center">
-    <p class="pt-16 text-black font-bold text-xl">
+    <p class="pt-16 font-bold text-xl">
       You got
       <span class="text-[#0eff01] font-bold">{{ correct || 0 }}</span> correct
     </p>
-    <p class="pt-2 text-black font-bold text-xl">
+    <p class="pt-2 font-bold text-xl">
       You got
       <span class="text-[#ff0901] font-bold">{{ wrong || 0 }}</span> wrong
     </p>
-    <p class="pt-2 text-black font-bold text-xl">
+    <p class="pt-2 font-bold text-xl">
       Your score: <span class="text-[#FFB801] font-bold">{{ score || 0 }}</span>
     </p>
     <div>
