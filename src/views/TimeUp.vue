@@ -9,7 +9,8 @@
       <span class="text-[#ff0901] font-bold">{{ wrong || 0 }}</span> wrong
     </p>
     <p class="pt-2 font-bold text-xl">
-      Your score: <span class="text-[#FFB801] font-bold">{{ score || 0 }}</span>
+      Your score :
+      <span class="text-[#FFB801] font-bold">{{ score || 0 }}</span>
     </p>
     <div>
       <h1 class="pt-32 text-center text-xl font-bold">Time's Up!</h1>
