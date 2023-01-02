@@ -20,7 +20,7 @@
       <div class="pt-7 pl-4 h-24 w-24">
         <img
           src="../assets/replay.png"
-          @click="goToOtherPage('play')"
+          @click="goToOtherPage('home')"
           class="h-full"
         />
       </div>
