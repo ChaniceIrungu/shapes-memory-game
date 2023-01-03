@@ -253,7 +253,7 @@ export default {
           this.buttonClickCounter = 0;
           localStorage.setItem("score", this.score);
           localStorage.setItem("correct", this.correct);
-          localStorage.setItem("wrong", this.correct);
+          localStorage.setItem("wrong", this.wrong);
           this.goToOtherPage("time-up"); // display a message when the timer ends
         }
       }, 1000); // run the timer every 1000 milliseconds (1 second)
