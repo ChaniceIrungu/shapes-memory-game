@@ -74,11 +74,17 @@ export default {
     return {
       timeLeft: 30, // start the timer at 60 seconds
       duration: 30,
+
       score: 0,
       correct: 0,
       wrong: 0,
+
       lives: 3,
       hearts: [],
+
+      buttonClickCounter: 0,
+      showTrueButtonFirst: true,
+
       progressWidth: null,
       shapes: ["circle", "square"],
       colors: ["red", "blue", "green", "purple", "orange", "yellow"],
@@ -86,14 +92,14 @@ export default {
         "It's a {color} {Shape}",
         "It's not a {color} {Shape}",
       ],
-      showTrueButtonFirst: true,
-      buttonClickCounter: 0,
-      statementTemplate: null,
+
       currentstatement: null,
-      currentShape: null,
-      currentColor: null,
+      // statementTemplate: null,
       statementShape: null,
       statementColor: null,
+
+      currentShape: null,
+      currentColor: null,
     };
   },
   unmounted() {
@@ -192,7 +198,6 @@ export default {
       this.buttonClickCounter++;
 
       this.interchangeButtons();
-      this.createStatement();
       this.createShapes();
     },
 
@@ -230,8 +235,6 @@ export default {
 
     // method to create the shapes
     createShapes() {
-      // create statement when shape is created
-      this.createStatement();
       // randomize shape creation
       const shape = this.shapes[Math.floor(Math.random() * this.shapes.length)];
       this.currentShape = shape;
@@ -251,6 +254,8 @@ export default {
             <rect x="7" y="7" width="163" height="163" stroke="${color}" stroke-width="14"/>
             </svg>`;
       }
+      // create statement when shape is created
+      this.createStatement();
     },
 
     createStatement() {
@@ -268,23 +273,23 @@ export default {
       }
       this.statementShape = shape;
       this.statementColor = color;
-      this.statementTemplate =
+      let statementTemplate =
         this.statementTemplates[
           Math.floor(Math.random() * this.statementTemplates.length)
         ];
 
-      if (/not/i.test(this.statementTemplate)) {
+      if (/not/i.test(statementTemplate)) {
         // if -ve
         this.$refs[
           this.statementContainerRef
         ].innerHTML = `It's not a ${color} ${shape}`;
-        this.currentstatement = this.statementTemplate;
+        this.currentstatement = statementTemplate;
       } else {
         //if +ve
         this.$refs[
           this.statementContainerRef
         ].innerHTML = `It's a ${color} ${shape}`;
-        this.currentstatement = this.statementTemplate;
+        this.currentstatement = statementTemplate;
       }
     },
 
