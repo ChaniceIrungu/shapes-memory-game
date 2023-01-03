@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="flex flex-col items-center">
-      <div class="pt-24">
+      <div class="pt-16">
         <img src="../assets/game-logo2.png" class="" />
       </div>
       <div class="">
