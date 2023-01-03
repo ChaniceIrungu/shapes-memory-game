@@ -78,8 +78,8 @@
 export default {
   data() {
     return {
-      timeLeft: 30, // start the timer at 60 seconds
-      duration: 30,
+      timeLeft: 45, // start the timer at 60 seconds
+      duration: 45,
 
       score: 0,
       correct: 0,
