@@ -27,7 +27,7 @@
       class="flex justify-center"
     ></div>
     <!-- show true button first -->
-    <div v-show="showTrueButtonFirst" class="flex justify-between px-4 mt-28">
+    <div v-show="showTrueButtonFirst" class="flex justify-between px-4 mt-32">
       <!-- false button left -->
       <div class="h-24 w-24">
         <img
@@ -46,7 +46,7 @@
         />
       </div>
     </div>
-    <div v-show="!showTrueButtonFirst" class="flex justify-between px-4 mt-28">
+    <div v-show="!showTrueButtonFirst" class="flex justify-between px-4 mt-32">
       <!-- true button on left side -->
       <div class="h-24 w-24">
         <img
