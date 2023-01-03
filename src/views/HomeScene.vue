@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <div class="relative">
-      <div class="mt-16 ml-10">
+    <div class="flex flex-col items-center">
+      <div class="pt-24">
         <img src="../assets/game-logo2.png" class="" />
       </div>
       <div class="">
@@ -12,7 +12,7 @@
         </h1>
       </div>
 
-      <div class="pt-24 text-center">
+      <div class="pt-36 text-center">
         <router-link to="/play">
           <button
             class="bg-[#0EB391] hover:bg-[#2D625D] text-white font-bold py-2 px-8 rounded-full"

@@ -1,15 +1,29 @@
 <template>
   <div class="flex flex-col items-center">
-    <p class="pt-16 text-[#FFB801] font-bold text-3xl">5/10</p>
+    <p class="pt-16 font-bold text-xl">
+      You got
+      <span class="text-[#0eff01] font-bold">{{ correct || 0 }}</span> correct
+    </p>
+    <p class="pt-2 font-bold text-xl">
+      You got
+      <span class="text-[#ff0901] font-bold">{{ wrong || 0 }}</span> wrong
+    </p>
+    <p class="pt-2 font-bold text-xl">
+      Your score :
+      <span class="text-[#FFB801] font-bold">{{ score || 0 }}</span>
+    </p>
     <div>
-      <h1 class="pt-32 text-center text-xl font-bold">Congratulations!!</h1>
+      <h1 class="pt-32 text-center text-xl font-bold">
+        OOPs! You Lost All Your Lives!
+      </h1>
     </div>
-    <div class="pt-48 flex flex-col items-center">
+    <div class="pt-32 flex flex-col items-center">
       <h1 class="text-center text-xl font-bold">Come on! You can do it!</h1>
+      <h1 class="pt-2 text-center text-xl font-bold">Play Again</h1>
       <div class="pt-7 pl-4 h-24 w-24">
         <img
           src="../assets/play-again.png"
-          @click="goToOtherPage('/')"
+          @click="goToOtherPage('/play')"
           class="h-full"
         />
       </div>
@@ -19,7 +33,11 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      score: localStorage.getItem("score"),
+      correct: localStorage.getItem("correct"),
+      wrong: localStorage.getItem("wrong"),
+    };
   },
   // method to navigate other pages
   methods: {

@@ -1,13 +1,19 @@
 <template>
-  <div style="">
+  <div class="">
     <!-- display the timer and progress bar -->
-    <div id="timer" class="pt-2 font-bold text-base">
+    <!-- <div id="timer" class="pt-2 font-bold text-base">
       {{ timeLeft }} seconds remaining
+    </div> -->
+    <div class="mt-2" id="progress" :style="{ width: progressWidth }"></div>
+    <div class="font-bold text-base flex pl-4">
+      <span class="pr-4">Health :</span>
+      <span v-for="heart in hearts" :key="heart">
+        <img class="h-6 w-6" src="../assets/heart_icon.png" />
+      </span>
     </div>
-    <div id="progress" :style="{ width: progressWidth }"></div>
-    <div class="font-bold text-base">score: {{ this.score }}</div>
+    <div class="font-bold text-base pl-4">score : {{ this.score }}</div>
     <!-- display the game board -->
-    <div class="pb-12">
+    <div class="pb-12 pt-4">
       <h3
         id="statement-container"
         ref="statementContainer"
@@ -71,6 +77,8 @@ export default {
       score: 0,
       correct: 0,
       wrong: 0,
+      lives: 3,
+      hearts: [],
       progressWidth: null,
       shapes: ["circle", "square"],
       colors: ["red", "blue", "green", "purple", "orange", "yellow"],
@@ -99,12 +107,8 @@ export default {
       (this.statementContainerRef = "statementContainer"),
       this.createShapes();
     this.startTimer();
+    this.createLives();
   },
-  // computed: {
-  //   showTrueButtonFirst() {
-  //     return this.buttonClickCounter % 2 === 0;
-  //   },
-  // },
 
   methods: {
     // method to start the timer
@@ -143,6 +147,7 @@ export default {
           if (isMatch) {
             console.log("You are wrong.");
             this.updateScore("wrong");
+            this.reduceLives();
           } else {
             console.log("You are right.");
             this.updateScore("right");
@@ -154,6 +159,7 @@ export default {
           } else {
             console.log("You are wrong.");
             this.updateScore("wrong");
+            this.reduceLives();
           }
         }
       }
@@ -166,10 +172,12 @@ export default {
           } else {
             console.log("You are wrong.");
             this.updateScore("wrong");
+            this.reduceLives();
           }
         } else {
           if (isMatch) {
             console.log("You are wrong.");
+            this.reduceLives();
             this.updateScore("wrong");
           } else {
             console.log("You are right.");
@@ -184,7 +192,7 @@ export default {
       this.buttonClickCounter++;
 
       this.interchangeButtons();
-
+      this.createStatement();
       this.createShapes();
     },
 
@@ -195,6 +203,20 @@ export default {
       } else if (result === "wrong") {
         this.score -= 20;
         this.wrong++;
+      }
+    },
+
+    createLives() {
+      for (let i = 0; i < this.lives; i++) {
+        this.hearts.push(i);
+      }
+    },
+
+    reduceLives() {
+      this.lives--;
+      this.hearts.pop();
+      if (this.hearts.length <= 0) {
+        this.goToOtherPage("game-over");
       }
     },
     interchangeButtons() {
@@ -270,12 +292,6 @@ export default {
     goToOtherPage(page) {
       this.$router.push(`${page}`);
     },
-    // method to bind the correct class to each shape
-    shapeClass(shape) {
-      return `shape ${shape.shape} ${shape.color}`;
-    },
-
-    displayNextShape() {},
   },
 };
 </script>
@@ -285,19 +301,9 @@ export default {
   margin-bottom: 10px;
 }
 #progress {
-  height: 20px;
-  background-color: lightgrey;
+  height: 15px;
+  background-color: lightslategrey;
   margin-bottom: 20px;
-}
-#game-board {
-  display: flex;
-  flex-wrap: wrap;
-}
-.shape {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 5px solid black;
 }
 
 button {
