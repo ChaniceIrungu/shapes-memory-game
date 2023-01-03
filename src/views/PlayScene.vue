@@ -12,7 +12,7 @@
     </div>
 
     <!-- Score -->
-    <div class="font-bold text-base pl-4">score : {{ this.score }}</div>
+    <div class="font-bold text-base pl-4">Score : {{ this.score }}</div>
 
     <!-- display the game board -->
     <div class="pb-12 pt-4">
