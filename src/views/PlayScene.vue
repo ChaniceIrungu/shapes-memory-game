@@ -198,19 +198,15 @@ export default {
       if (isTrue) {
         if (isNegative) {
           if (isMatch) {
-            console.log("You are wrong.");
             this.updateScore("wrong");
             this.reduceLives();
           } else {
-            console.log("You are right.");
             this.updateScore("right");
           }
         } else {
           if (isMatch) {
-            console.log("You are right.");
             this.updateScore("right");
           } else {
-            console.log("You are wrong.");
             this.updateScore("wrong");
             this.reduceLives();
           }
@@ -220,20 +216,16 @@ export default {
       else if (isFalse) {
         if (isNegative) {
           if (isMatch) {
-            console.log("You are right.");
             this.updateScore("right");
           } else {
-            console.log("You are wrong.");
             this.updateScore("wrong");
             this.reduceLives();
           }
         } else {
           if (isMatch) {
-            console.log("You are wrong.");
             this.reduceLives();
             this.updateScore("wrong");
           } else {
-            console.log("You are right.");
             this.updateScore("right");
           }
         }

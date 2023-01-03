@@ -4,6 +4,7 @@
   width: 360px;
   height: 640px;
   min-height: 100vh;
+  /* max-height: 100%; */
   margin: 0 auto;
   padding: 2px;
   font-weight: normal;
