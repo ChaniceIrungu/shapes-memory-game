@@ -12,10 +12,10 @@
         </h1>
       </div>
 
-      <div class="pt-36 text-center">
+      <div class="pt-32 text-center">
         <router-link to="/play">
           <button
-            class="bg-[#0EB391] hover:bg-[#2D625D] text-white font-bold py-3 px-10 rounded-full"
+            class="bg-[#698F01] hover:bg-[#35202D] text-white font-bold py-3 px-10 rounded-full"
           >
             Continue
           </button>
