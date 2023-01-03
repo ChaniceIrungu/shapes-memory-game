@@ -6,7 +6,7 @@
       </div>
       <div class="">
         <h1
-          class="px-2 pt-36 text-center text-[#296458] text-lg font-bold whitespace-nowrap"
+          class="px-2 pt-36 text-center text-[#296458] text-xl font-bold whitespace-nowrap"
         >
           Choose if statement is True or False
         </h1>
@@ -15,7 +15,7 @@
       <div class="pt-36 text-center">
         <router-link to="/play">
           <button
-            class="bg-[#0EB391] hover:bg-[#2D625D] text-white font-bold py-2 px-8 rounded-full"
+            class="bg-[#0EB391] hover:bg-[#2D625D] text-white font-bold py-3 px-10 rounded-full"
           >
             Continue
           </button>
