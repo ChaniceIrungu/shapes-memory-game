@@ -6,7 +6,7 @@
       </div>
       <div class="">
         <h1
-          class="px-2 pt-36 text-center text-[#296458] text-xl font-bold whitespace-nowrap"
+          class="px-2 pt-36 text-center text-[#343f14] text-xl font-bold whitespace-nowrap"
         >
           Choose if statement is True or False
         </h1>
