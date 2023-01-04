@@ -279,6 +279,9 @@ export default {
       this.lives--;
       this.hearts.pop();
       if (this.hearts.length <= 0) {
+        localStorage.setItem("score", this.score);
+        localStorage.setItem("correct", this.correct);
+        localStorage.setItem("wrong", this.wrong);
         this.goToOtherPage("game-over");
       }
     },
