@@ -92,7 +92,7 @@ export default {
       showTrueButtonFirst: true,
 
       progressWidth: null,
-      shapes: ["circle", "square"],
+      shapes: ["circle", "square", "triangle"],
       colors: ["red", "blue", "green", "purple", "orange", "yellow"],
       statementTemplates: [
         "It's a {color} {Shape}",
@@ -137,12 +137,18 @@ export default {
         <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="88.5" cy="88.5" r="81.5" stroke="${color}" stroke-width="14"/>
           </svg>`;
-      } else {
+      } else if (shape === "square") {
         this.$refs[this.shapeContainerRef].innerHTML = `
         <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="7" y="7" width="163" height="163" stroke="${color}" stroke-width="14"/>
             </svg>`;
+      } else if (shape === "triangle") {
+        this.$refs[this.shapeContainerRef].innerHTML = `
+      <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="88.5 7 7 170 170 170" stroke="${color}" stroke-width="14"/>
+      </svg>`;
       }
+
       // create statement when shape is created
       this.createStatement();
     },
